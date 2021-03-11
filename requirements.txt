@@ -1,0 +1,7 @@
+fastapi
+psycopg2
+passlib
+bcrypt
+passlib #hassing password
+python-jose #for taken jwt
+fastapi-mail # email forgetpassword
