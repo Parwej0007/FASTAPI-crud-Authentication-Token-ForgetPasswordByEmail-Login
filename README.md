@@ -7,26 +7,26 @@
 ### 6. forget password by using Email id.
 <br><br>
 
-----------------------CRUD operation without database----------------------------
+---------------------- <b>CRUD operation without database</b> ----------------------------
 ![](image-test/fastapi-basic-main.png)
 ![](image-test/basic_output.png)
 <br><br>
-----------------------CRUD operation with database----------------------------
+---------------------- <b>CRUD operation with database</b> ----------------------------
 ![](image-test/create_blog_stroe_db.png)
 <br><br>
-----------------------Authentication - registration, login----------------------------
+---------------------- <b>Authentication - registration, login</b> ----------------------------
 ![](image-test/create_user_auth.png)
 <br><br>
-----------------------Token - generate takon for each user after successfully login----------------------------
+---------------------- <b>Token - generate takon for each user after successfully login</b>  ----------------------------
 ![](image-test/token.png)
 <br><br>
-----------------------Token - use token for access API data----------------------------
+---------------------- <b>Token - use token for access API data</b> ----------------------------
 ![](image-test/authenticate_token_user.png)
 ![](image-test/authenticate_token_success.png)
 ![](image-test/token_need.png)
 <br><br>
-----------------------Token - use token for access API data----------------------------
-![](image-test/forget password by using Email id.png)
+---------------------- <b>Token - use token for access API data</b> ----------------------------
+![](image-test/forget_pasword.png)
 <br><br>
 
 ### Thank You!
