@@ -9,3 +9,18 @@
 
 ----------------------CRUD operation without database----------------------------
 ![](image-test/fastapi-basic-main.png)
+![](image-test/basic_output.png)
+<br><br>
+----------------------CRUD operation with database----------------------------
+![](image-test/create_blog_stroe_db.png)
+<br><br>
+----------------------Authentication - registration, login----------------------------
+![](image-test/create_user_auth.png)
+<br><br>
+----------------------Token - generate takon for each user after successfully login----------------------------
+![](image-test/create_user_auth.png)
+<br><br>
+
+
+
+
