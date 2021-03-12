@@ -1,4 +1,4 @@
-### .. FASTAPI, Pydantic
+### .. FASTAPI, Pydantic, SqlAlchemy, PostgreSQL ..
 ### 1. CRUD operation without database (main.py I written code).
 ### 2. CRUD operation With PostgreSQL database (blog.py)
 ### 3. Authentication - registration, login. 
