@@ -18,8 +18,18 @@
 ![](image-test/create_user_auth.png)
 <br><br>
 ----------------------Token - generate takon for each user after successfully login----------------------------
-![](image-test/create_user_auth.png)
+![](image-test/token.png)
 <br><br>
+----------------------Token - use token for access API data----------------------------
+![](image-test/authenticate_token_user.png)
+![](image-test/authenticate_token_success.png)
+![](image-test/token_need.png)
+<br><br>
+----------------------Token - use token for access API data----------------------------
+![](image-test/forget password by using Email id.png)
+<br><br>
+
+### Thank You!
 
 
 
