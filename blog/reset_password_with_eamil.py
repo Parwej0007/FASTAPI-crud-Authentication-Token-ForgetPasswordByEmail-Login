@@ -2,7 +2,7 @@ from fastapi_mail import ConnectionConfig, MessageSchema, FastMail
 from typing import List
 
 conf = ConnectionConfig(
-    MAIL_USERNAME = "parwejalam270@gmail.com",
+    MAIL_USERNAME = " ",
     MAIL_PASSWORD = "",
     MAIL_FROM = "Parwejalam270@gmail.com",
     MAIL_PORT = 587,

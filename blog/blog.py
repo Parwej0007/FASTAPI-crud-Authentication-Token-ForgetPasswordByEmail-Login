@@ -35,8 +35,9 @@ app = FastAPI()
 ############# CRUD blog using fastapi and use database - PostgreSQL ###################
 
 # create_blog()
+# authenticate by login and get token
 @app.post('/blog/create/', status_code=status.HTTP_201_CREATED, tags=["blog"])
-def create_blog(request: schemas_d.BlogCreate, db: Session = Depends(get_db)):
+def create_blog(request: schemas_d.BlogCreate, db: Session = Depends(get_db), current_user: schemas_d.ListSchemaUser = Depends(oauth2.get_current_user)):
     # request: sc.BlogCreate call pydantic for validate request
 
     new_blog = models.Blog(title=request.title, body=request.body, user_id=1)
@@ -48,14 +49,14 @@ def create_blog(request: schemas_d.BlogCreate, db: Session = Depends(get_db)):
 
 # fecth all data from blog show
 # now using authentication token for access post current_user
-@app.get('/blog/list/', status_code=status.HTTP_200_OK, tags=["blog"], )
+@app.get('/blog/list/', status_code=status.HTTP_200_OK, tags=["blog"])
 def show_blog(db: Session = Depends(get_db), current_user: schemas_d.ListSchemaUser = Depends(oauth2.get_current_user)):
     all_blog = db.query(models.Blog).all()
     return {"data": all_blog}
 
 # details data from blog
-@app.get('/blog/details/{id}/', status_code= status.HTTP_200_OK, response_model=schemas_d.ShowBlog, tags=["blog"])
-def details_blog(id: int, db: Session = Depends(get_db)):
+@app.get('/blog/details/{id}/', status_code= status.HTTP_200_OK, tags=["blog"])
+def details_blog(id: int, db: Session = Depends(get_db), current_user: schemas_d.ListSchemaUser = Depends(oauth2.get_current_user)):
     fetch_blog = db.query(models.Blog).filter(models.Blog.id == id).first()
     print(fetch_blog.user_id)
     # if not fetch data
@@ -69,7 +70,7 @@ def details_blog(id: int, db: Session = Depends(get_db)):
 
 # update blog
 @app.put('/blog/update/{id}/', status_code=status.HTTP_202_ACCEPTED, tags=["blog"])
-def update_blog(id: int, request: schemas_d.BlogCreate, db: Session = Depends(get_db)):
+def update_blog(id: int, request: schemas_d.BlogCreate, db: Session = Depends(get_db), current_user: schemas_d.ListSchemaUser = Depends(oauth2.get_current_user)):
     fetch_blog = db.query(models.Blog).filter(models.Blog.id==id)
     if fetch_blog.first(): # get first fetch data
         fetch_blog.update(request)
@@ -81,7 +82,7 @@ def update_blog(id: int, request: schemas_d.BlogCreate, db: Session = Depends(ge
 
 # delete blog post
 @app.delete('/blog/delete/{id}/', status_code=status.HTTP_204_NO_CONTENT, tags=["blog"])
-def delete_post(id: int, db: Session = Depends(get_db)):
+def delete_post(id: int, db: Session = Depends(get_db), current_user: schemas_d.ListSchemaUser = Depends(oauth2.get_current_user)):
     fetch = db.query(models.Blog).filter(models.Blog.id==id).first()
     if fetch:
         fetch.delete()
